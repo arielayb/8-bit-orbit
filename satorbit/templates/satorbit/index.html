@@ -1,0 +1,10 @@
+{% if latest_satellite_list %}
+    <ul>
+    {% for satellite in latest_satellite_list %}
+        {% comment %} <li><a href="/satorbit/{{ satellite.id }}/">{{ satellite.satellite_text }}</a></li> {% endcomment %}
+        <li><a href="{% url 'satorbit:detail' satellite.id %}">{{ satellite.satellite_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No satellites are available.</p>
+{% endif %}
