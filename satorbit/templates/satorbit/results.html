@@ -1,0 +1,7 @@
+<h1>{{ satellite.satellite_text }}</h1>
+
+<ul>
+{% for choice in satellite.choice_set.all %}
+    <li>{{ choice.choice_text }}</li>
+{% endfor %}
+</ul>

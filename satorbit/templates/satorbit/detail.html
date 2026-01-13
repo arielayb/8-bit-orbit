@@ -1,0 +1,12 @@
+<form action="{% url 'satorbit:detail' satellite.id %}" method="post">
+{% csrf_token %}
+<fieldset>
+    <legend><h1>{{ satellite.satellite_text }}</h1></legend>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    <ul>
+    {% for choice in satellite.choice_set.all %}
+        <li>{{ choice.choice_text }}</li>
+    {% endfor %}
+    </ul>
+</fieldset>
+</form>
