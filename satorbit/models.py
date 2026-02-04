@@ -5,13 +5,18 @@ from django.utils import timezone
 # Create your models here.
 class Satellite(models.Model):
     def __str__(self):
-        return self.satellite_text
+        return self.satellite_text, self.x_coord, self.y_coord, self.Z_coord
 
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
     satellite_text = models.CharField(max_length=200)
+    x_coord = models.FloatField(default=0.0)
+    y_coord = models.FloatField(default=0.0)
+    z_coord = models.FloatField(default=0.0)
+    
     pub_date = models.DateTimeField("date published")
+
 
 class Pick(models.Model):
     def __str__(self):

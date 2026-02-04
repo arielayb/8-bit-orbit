@@ -1,3 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Satellite Orbit</title>
+    <!-- Include Three.js library -->
+    <script src="{% static 'js/three.min.js' %}"></script>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>    
+</head>
+<body>
+<!-- Your custom script that contains the 3D scene logic -->
+<script src="{% static 'js/main3d.js' %}"></script>        
 {% if latest_satellite_list %}
     <ul>
     {% for satellite in latest_satellite_list %}
@@ -8,3 +23,5 @@
 {% else %}
     <p>No satellites are available.</p>
 {% endif %}
+</body>
+</html>
