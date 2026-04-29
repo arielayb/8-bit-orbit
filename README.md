@@ -49,3 +49,7 @@ For Nginx to use these files, update your server block:
 
     Use code with caution.
     Test and Reload: Run sudo nginx -t then sudo systemctl reload nginx. 
+
+
+the curl command:
+curl -X GET --cert server.crt --key server.key  --cacert ca.crt https://localhost:8080/ -v
